@@ -1,0 +1,17 @@
+<h2> Votar por el juego del Year, Bato!!! </h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <div class="card-columns">
+            <div *ngFor="let juego  of juegos" class="card  text-white bg-dark">
+                <img [src]="juego.url" class="card-img-top" [alt]="juego.name">
+                <div class="card-body">
+                    <h5 class="card-title">{{ juego.name }}</h5>
+                    <!-- <p class="card-text">Votos: {{ juego.votos }} </p> -->
+                    <button (click)="votarJuego( juego )" class="btn btn-outline-primary btn-block">Vote or die</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

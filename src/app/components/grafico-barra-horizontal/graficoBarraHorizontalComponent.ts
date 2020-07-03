@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, Input } from '@angular/core';
 
 @Component({
   selector: 'app-grafico-barra-horizontal',
@@ -7,67 +7,23 @@ import { Component, OnDestroy } from '@angular/core';
 })
 export class GraficoBarraHorizontalComponent implements OnDestroy {
 
-  results: any[] = [{
-    "name": "eleccion 1",
-    "value": 8940000
-  },
-  {
-    "name": "eleccion 2",
-    "value": 5000000
-  },
-  {
-    "name": "eleccion 3",
-    "value": 7200000
-  },
-  {
-    "name": "eleccion 4",
-    "value": 8200000
-  }];
+  @Input() results: any[] = [];
+  //   "name": "eleccion 1",
+  //   "value": 8940000
+  // },
+  // {
+  //   "name": "eleccion 2",
+  //   "value": 5000000
+  // },
+  // {
+  //   "name": "eleccion 3",
+  //   "value": 7200000
+  // },
+  // {
+  //   "name": "eleccion 4",
+  //   "value": 8200000
+  // }];
 
-  multi: any[]= [
-    {
-      "name": "Germany",
-      "series": [
-        {
-          "name": "2010",
-          "value": 7300000
-        },
-        {
-          "name": "2011",
-          "value": 8940000
-        }
-      ]
-    },
-  
-    {
-      "name": "USA",
-      "series": [
-        {
-          "name": "2010",
-          "value": 7870000
-        },
-        {
-          "name": "2011",
-          "value": 8270000
-        }
-      ]
-    },
-  
-    {
-      "name": "France",
-      "series": [
-        {
-          "name": "2010",
-          "value": 5000002
-        },
-        {
-          "name": "2011",
-          "value": 5800000
-        }
-      ]
-    }
-  ];
-  
 
   view: any[] = [700, 400];
 
@@ -89,17 +45,17 @@ export class GraficoBarraHorizontalComponent implements OnDestroy {
 
   constructor() {
 
-    this.intervalo =  setInterval( () =>{
+    // this.intervalo =  setInterval( () =>{
 
-      let newResults = [...this.results];
+    //   let newResults = [...this.results];
 
-      for( let i = 0; i < newResults.length; i++ ){
-        newResults[i].value = Math.round( Math.random() * 500  );
-      }
+    //   for( let i = 0; i < newResults.length; i++ ){
+    //     newResults[i].value = Math.round( Math.random() * 500  );
+    //   }
 
-      this.results = [ ...newResults ];
+    //   this.results = [ ...newResults ];
 
-    }, 4500 );
+    // }, 4500 );
   }
 
   onSelect(event) {
@@ -111,6 +67,6 @@ export class GraficoBarraHorizontalComponent implements OnDestroy {
   }
     
   ngOnDestroy(){
-    clearInterval( this.intervalo );
+    // clearInterval( this.intervalo );
   }
 }
